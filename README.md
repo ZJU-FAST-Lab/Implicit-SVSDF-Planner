@@ -5,10 +5,12 @@ Code Release:
 
 This is an extension of our previous work：
 - [Continuous Implicit SDF Based Any-shape Robot Trajectory Optimization(IROS 2023)](https://github.com/ZJU-FAST-Lab/Implicit-SDF-Planner)
-
+  
+* [Video on Bilibili](https://www.bilibili.com/video/BV1SJ4m1E7YF/?spm_id_from=333.999.0.0&vd_source=86f7d513b2e1d5a2a395a307e7802996)
 * [Video on Youtube](https://youtu.be/XbcX-jPE89U)
 
-<a href="https://youtu.be/XbcX-jPE89U" target="blank">
+
+<a href="https://www.bilibili.com/video/BV1SJ4m1E7YF/?spm_id_from=333.999.0.0&vd_source=86f7d513b2e1d5a2a395a307e7802996" target="blank">
   <p align="center">
     <img src="figs/teaser.png" width="1000"/>
   </p>
