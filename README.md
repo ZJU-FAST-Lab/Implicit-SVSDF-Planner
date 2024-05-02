@@ -1,7 +1,10 @@
 # Implicit-SVSDF-Planner
-SIGGRAPH 2024 & TOG
-Code Release: 
-- Implicit Swept Volume SDF: Enabling Continuous Collision-Free Trajectory Generation for Arbitrary Shapes
+Code Release for SIGGRAPH 2024 & TOG
+
+**Related Paper**: 
+
+- [Implicit Swept Volume SDF: Enabling Continuous Collision-Free Trajectory Generation for Arbitrary Shapes](https://arxiv.org/pdf/2405.00362v1)
+- Authors: Jingping Wang*, Tingrui Zhang*, Qixuan Zhang, Chuxiao Zeng, Jingyi Yu, Chao Xu, Lan Xu†, Fei Gao†.
 
 This is an extension of our previous work：
 - [Continuous Implicit SDF Based Any-shape Robot Trajectory Optimization(IROS 2023)](https://github.com/ZJU-FAST-Lab/Implicit-SDF-Planner)
