@@ -34,7 +34,7 @@ In the field of trajectory generation for objects, ensuring continuous collision
  
 
 # Prerequisites
-We use ros-neotic, which is a meta-package that includes several commonly used packages for robotics development. To install ros-neotic, follow the instructions in the [ros-neotic](http://wiki.ros.org/noetic/Installation/Ubuntu).
+We use ros-neotic, which is commonly used for robotics development. To install ros-neotic, follow the instructions in the [ros-neotic for ubuntu20.04](http://wiki.ros.org/noetic/Installation/Ubuntu).([ros-melodic for ubuntu18.04](http://wiki.ros.org/melodic/Installation/Ubuntu))
 Make sure that the necessary Python packages catkin_pkg and empy(empy==3.3.4) are installed in your Python environment.For example, if the python environment in build.sh is set to "-DPYTHON_EXECUTABLE=/usr/bin/python3", you should have installed catkin_pkg under /usr/bin/python3:
 ```sh
 sudo apt-get install gcc g++ make gfortran cmake libomp-dev
