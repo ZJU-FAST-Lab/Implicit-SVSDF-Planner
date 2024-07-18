@@ -1,0 +1,71 @@
+
+meshTopic:                    '/polyve/mesh'
+edgeTopic:                    '/polyve/edge'
+vertexTopic:                  '/polyve/vert'
+
+loadStartEnd:               true
+inputdata:                    "shapes/sdCutDisk.obj" 
+colli_thres: 0.65
+poly_params:                   [0.0,-3.0,0.0]  
+selfmapresu:                0.05 
+threads_num:                12
+
+momentum:                   0.0 
+
+eps:                            0.3
+
+testRate:                     100.0
+
+ts:                           2.0 
+vehicleMass:                0.61
+gravAcc:                    9.8
+horizDrag:                  0.10
+vertDrag:                   0.10
+parasDrag:                  0.01
+speedEps:                   0.0001
+
+mapTopic:                     '/voxel_map'
+
+voxelWidth:                 0.15 
+mapBound:                   [-25.0, 25.0, -25.0, 25.0, 0.0, 15.0]
+occupancy_resolution:      1.0 
+debug_output:              false 
+sta_threshold:             1 
+
+kernel_size:  17       # 必须为奇数，一个kernel的bounding boxsize，乘以地图分辨率occupancy_resolution为kernel各轴的长度
+kernel_yaw_num:   18   # 必须为偶数
+front_end_safeh:  0.0
+
+# ======= backend part ======= #
+
+enableearlyExit:            true  
+debugpause:                 1      
+
+smoothingEps:               1.0e-2   
+integralIntervs:            4        
+relCostTol:                 1.0e-20
+relCostTolMidEnd:           1.0e-10
+vmax:                       10
+omgmax:                     10
+thetamax:                   100.0
+
+weight_v:                   10.0    
+weight_a:                   10.0    
+weight_p:                   60.0    
+weight_pr:                  40.0    
+weight_ar:                  0.0     
+
+weight_omg:                 10.0    
+weight_theta:               10.0    
+rho_mid_end:                2
+rho:                        3.8     
+
+safety_hor:                 0.87    
+inittime:                   2.5 
+
+mem_size:                   16 # The default value is 8. Values less than 3 are not recommended. Large values will result in excessive computing time.
+past:                       64 #Distance for delta-based convergence test. This parameter determines the distance, in iterations, to compute the rate of decrease of the cost function
+min_step:                   1.0e-32 #The minimum step of the line search routine.The default value is 1.0e-20. This value need not be modified unless the exponents are too large for the machine being used, or unless the problem is extremely badly scaled (in which case the exponents should be increased).
+g_epsilon:                  0.0 #The default value is 1.0e-5.This should be greater than 1.0e-6 in practice because L-BFGS does not directly reduce first-order residual.
+# relCostTol:                 1.0e-7 #The default value is 1.0e-6.Delta for convergence test.This parameter determines the minimum rate of decrease of the cost function
+

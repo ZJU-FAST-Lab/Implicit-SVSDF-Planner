@@ -1,0 +1,49 @@
+<?xml version="2.0" encoding="utf-8"?>
+<launch>
+
+    <!-- <node pkg="utils" name="debug_sender" type="debug_sender_node" output="screen">
+    </node> -->
+
+    
+
+    <node pkg="debug_assistant" name="debug_amonitor" type="main.py" output="screen">
+    </node>
+    
+    <node name="rvaiz" pkg="rviz" type="rviz" output="screen"
+        args="-d $(find plan_manager)/config/any_shape.rviz"> 
+    </node>
+
+
+    <node pkg="plan_manager" type="plan_manager" name="plana_manager" output="screen">
+        <rosparam file="$(find plan_manager)/config/star.yaml" command="load" />
+    </node>
+
+    <!-- trajectory server -->
+    <node pkg="plan_manager" name="traja_server" type="traj_server" output="screen">
+        <remap from="position_cmd"             to="drone_planning/pos_cmd"/>
+        <remap from="~planning/trajectory"     to="drone_planning/trajectory"/>
+        <param name="traj_server/time_forward" value="1.0" type="double"/>
+    </node>
+
+    <node pkg="poscmd_2_odom" name="poscmad_2_odom" type="poscmd_2_odom" output="screen">
+        <param name="init_x" value="0.0"/>
+        <param name="init_y" value="0.0"/>
+        <param name="init_z" value="0.0"/>
+        <remap from="~command" to="drone_planning/pos_cmd"/>
+        <remap from="~odometry" to="odom"/>
+    </node>
+
+
+
+
+
+<!-- use program code globalmap generator注释掉之后在Unity中操作修改地图 -->
+	<include file="$(find map_manager)/launch/globalmap_gene.launch">
+		<arg name="map_id" value="5" />
+		<arg name="noiseScale" value="0.75" />
+		<arg name="noiseThreshold" value="0.50" />
+        <arg name="read_from_pcd" value="true" />
+        <arg name="pcd_file_name" value="map_star.pcd" />
+	</include>
+
+</launch>

@@ -1,0 +1,12 @@
+{
+    "operations": [
+        {
+            "name": "useOurs",
+            "id": 120
+        },
+        {
+            "name": "replay trajectory",
+            "id": 103
+        }
+    ]
+}
